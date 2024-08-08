@@ -1,9 +1,9 @@
 import { Body, Controller, Delete, Get, Header, HostParam, HttpCode, HttpStatus, Param, Post, Put, Query, Redirect, Req, Res } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { Observable } from 'rxjs';
-import { Cat } from './app/interface/interface.interface';
-import { AppService } from './app/app.service';
-import { CreateCatDto } from './app/DTO/create-cat.dto';
+import { Cat } from './appData/interface/interface.interface';
+import { AppService } from './appData/app.service';
+import { CreateCatDto } from './appData/DTO/create-cat.dto';
 
 
 
