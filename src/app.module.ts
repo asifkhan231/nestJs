@@ -3,6 +3,8 @@ import { AppController } from './app.controller';
 import { AppService } from './appData/app.service';
 import { ExampleMiddleware } from './appData/middleware/example/example.middleware';
 import { AnotherMiddleware } from './appData/middleware/another/another.middleware';
+import { APP_FILTER } from '@nestjs/core';
+import { HttpExceptionFilter } from './appData/exception/http-exception/http-exception.filter';
 
 @Module({
   controllers: [AppController],
