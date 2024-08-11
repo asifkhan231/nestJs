@@ -6,10 +6,10 @@ import { AllExceptionFilter } from './appData/exception/all-exception/all-except
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule)
-  // app.useGlobalFilters(new HttpExceptionFilter())
+  app.useGlobalFilters(new HttpExceptionFilter())
 
-  const httpAdapter = app.get(HttpAdapterHost)
-  app.useGlobalFilters(new AllExceptionFilter(httpAdapter));
+  // const httpAdapter = app.get(HttpAdapterHost)
+  // app.useGlobalFilters(new AllExceptionFilter(httpAdapter));
   await app.listen(3000);
 }
 bootstrap();

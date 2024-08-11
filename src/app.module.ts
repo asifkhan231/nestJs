@@ -14,19 +14,19 @@ export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     // consumer.apply(ExampleMiddleware).forRoutes('/')
     //  consumer.apply(ExampleMiddleware).forRoutes(AppController)
-    consumer.apply(ExampleMiddleware).forRoutes(
-      {
-        path: "cats",
-        method: RequestMethod.GET
-      },
-      {
-        path: "create-cat",
-        method: RequestMethod.POST
-      }).apply(AnotherMiddleware).forRoutes(
-        {
-          path: 'delete-cat',
-          method: RequestMethod.DELETE
-        }
-      )
+  //   consumer.apply(ExampleMiddleware).forRoutes(
+  //     {
+  //       path: "cats",
+  //       method: RequestMethod.GET
+  //     },
+  //     {
+  //       path: "create-cat",
+  //       method: RequestMethod.POST
+  //     }).apply(AnotherMiddleware).forRoutes(
+  //       {
+  //         path: 'delete-cat',
+  //         method: RequestMethod.DELETE
+  //       }
+  //     )
   }
 }

@@ -17,4 +17,8 @@ export class AppService {
         return this.cats;
     }
 
+    findOne(id){
+        return id
+    }
+
 }
