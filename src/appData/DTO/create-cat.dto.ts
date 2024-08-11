@@ -1,12 +1,13 @@
-import { IsInt,IsString } from "class-validator";
+import { IsInt, IsNotEmpty, IsString } from "class-validator";
 
-export class CreateCatDto{
+export class CreateCatDto {
     @IsString()
+    @IsNotEmpty()
     readonly name: string;
-  
-    @IsInt()
+
+    @IsNotEmpty()
     readonly age: number;
-  
+
     @IsString()
     readonly breed: string;
 }
