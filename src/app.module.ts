@@ -1,14 +1,19 @@
-import { MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule, RequestMethod, ValidationPipe } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './appData/app.service';
 import { ExampleMiddleware } from './appData/middleware/example/example.middleware';
 import { AnotherMiddleware } from './appData/middleware/another/another.middleware';
-import { APP_FILTER } from '@nestjs/core';
+import { APP_FILTER, APP_PIPE } from '@nestjs/core';
 import { HttpExceptionFilter } from './appData/exception/http-exception/http-exception.filter';
 
 @Module({
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, 
+  //   {
+  //   provide:APP_PIPE,
+  //   useClass:ValidationPipe
+  // }
+]
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
