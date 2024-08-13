@@ -1,7 +1,6 @@
 export interface Cat {
     
-    "cat-name":string;
+    "name":string;
     "age":number;
     "breed":string;
-    "owner-name":string
 }
