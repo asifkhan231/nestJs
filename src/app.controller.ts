@@ -30,4 +30,8 @@ export class AppController {
   recentSearch(@Query('token') token:string){
     return this.recentSearchCatInfo.find(token)
   }
+   @Get('home')
+  hello(){
+    return "Hello ,world!"
+  }
 }
