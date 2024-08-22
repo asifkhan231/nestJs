@@ -1,11 +1,20 @@
 import { MiddlewareConsumer, Module, NestModule, RequestMethod, ValidationPipe } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { AppService } from './appData/app.service';
-import { CatsInfoService } from './appData/services/cats-info/cats-info.service';
-import { RecentSearchCatInfoService } from './appData/services/recent-search-cat-info/recent-search-cat-info.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
+  imports:[
+    TypeOrmModule.forRoot({
+      type:'mysql',
+      host:"localhost",
+      port:3306,
+      username:"root",
+      password:"Asif@123",
+      database:"mysql__databade",
+      entities:[],
+      synchronize:true,
+    })
+  ],
   controllers: [AppController],
-  providers: [AppService,CatsInfoService,RecentSearchCatInfoService]
 })
 export class AppModule {}
