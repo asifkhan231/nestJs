@@ -6,5 +6,4 @@ import { query, Request, Response } from 'express';
 @Controller()
 export class AppController {
   constructor() { }
-
 }
