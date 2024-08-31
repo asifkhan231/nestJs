@@ -1,11 +1,9 @@
-import { MiddlewareConsumer, Module, NestModule, RequestMethod, ValidationPipe } from '@nestjs/common';
+import {  Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { AppService } from './appData/app.service';
-import { CatsInfoService } from './appData/services/cats-info/cats-info.service';
-import { RecentSearchCatInfoService } from './appData/services/recent-search-cat-info/recent-search-cat-info.service';
+import { WebsocketsGateway } from './gateways/websocket/websocket.gateway';
 
 @Module({
   controllers: [AppController],
-  providers: [AppService,CatsInfoService,RecentSearchCatInfoService]
+  providers: [WebsocketsGateway],
 })
 export class AppModule {}
