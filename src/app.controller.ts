@@ -6,4 +6,9 @@ import { query, Request, Response } from 'express';
 @Controller()
 export class AppController {
   constructor() { }
+  @Get('/')
+  hello(){
+    console.log('Hello world')
+    return 'Hello world'
+  }
 }

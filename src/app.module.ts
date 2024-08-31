@@ -1,20 +1,9 @@
-import { MiddlewareConsumer, Module, NestModule, RequestMethod, ValidationPipe } from '@nestjs/common';
+import {  Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { WebsocketsGateway } from './gateways/websocket/websocket.gateway';
 
 @Module({
-  imports:[
-    TypeOrmModule.forRoot({
-      type:'mysql',
-      host:"localhost",
-      port:3306,
-      username:"root",
-      password:"Asif@123",
-      database:"mysql__databade",
-      entities:[],
-      synchronize:true,
-    })
-  ],
   controllers: [AppController],
+  providers: [WebsocketsGateway],
 })
 export class AppModule {}
